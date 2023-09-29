@@ -12,7 +12,8 @@ const roadmapSchema = new mongoose.Schema({
         required: [true, 'Must have a description']
     },
     content: {
-        type: String
+        type: String,
+        default: 'https://imagedelivery.net/2chPAg1PDekJ6oI478IB9Q/ef38c7de-04e8-41b6-f8a1-d2ec43909c00/public'
     },
     votes: {
         type: Number,
