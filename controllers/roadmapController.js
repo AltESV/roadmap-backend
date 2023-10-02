@@ -38,17 +38,17 @@ exports.createRoadmapFeature = async (req, res, next) => {
 }
 
 exports.vote = async (req, res, next) => {
-    const { featureId } = req.body; 
+    const { featureId, sessionId } = req.body; 
     try {
         const feature = await Roadmap.findById(featureId);
-        if(feature.sessionId.includes(req.sessionId)) {
+        if(feature.sessionId.includes(sessionId)) {
             return res.status(403).json({
                 status: 'error',
                 message: 'You already voted'
             })
         }
         feature.votes +=1
-        feature.sessionId.push(req.sessionId);
+        feature.sessionId.push(sessionId);
         await feature.save();
 
         res.status(200).json({
