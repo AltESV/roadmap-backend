@@ -3,7 +3,7 @@ const Roadmap = require('../models/roadmapModel');
 
 exports.getRoadmap = async (req, res, next) => {
     try{
-        const features = await Roadmap.find()    
+        const features = await Roadmap.find().sort({votes: -1})    
 
         res.status(200).json({
             status: 'success',
