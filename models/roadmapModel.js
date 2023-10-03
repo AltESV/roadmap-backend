@@ -13,7 +13,7 @@ const roadmapSchema = new mongoose.Schema({
     },
     content: {
         type: String,
-        default: 'https://imagedelivery.net/2chPAg1PDekJ6oI478IB9Q/ef38c7de-04e8-41b6-f8a1-d2ec43909c00/public'
+        default: 'https://imagedelivery.net/2chPAg1PDekJ6oI478IB9Q/4ea292f3-a0c3-41bf-833d-033e77771f00/public'
     },
     votes: {
         type: Number,
