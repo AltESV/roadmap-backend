@@ -1,11 +1,12 @@
 const express = require('express');
 const roadmapController = require('../controllers/roadmapController');
 const router = express.Router();
+const authMiddleware = require('../middleware/auth');
 
 router
 .route('/')
 .get(roadmapController.getRoadmap)
-.post(roadmapController.createRoadmapFeature)
+.post(authMiddleware, roadmapController.createRoadmapFeature)
 
 router
 .post('/vote', roadmapController.vote)
